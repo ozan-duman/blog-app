@@ -10,6 +10,7 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "paraphrase")
 public class Paraphrase {
     @Id
