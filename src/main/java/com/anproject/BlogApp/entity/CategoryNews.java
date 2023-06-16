@@ -1,4 +1,4 @@
-package entity;
+package com.anproject.BlogApp.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,26 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "approvals")
-public class Approval {
+@Table(name = "categories_news")
+public class CategoryNews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private boolean approveInfo;
-    private Date approveDate;
+    private int Long;
 
     @ManyToOne
     @JoinColumn(name = "news_id")
-    private News newsId;
+    private News news;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User userId;
+    @JoinColumn(name = "category_id")
+    private Category categoryId;
 }

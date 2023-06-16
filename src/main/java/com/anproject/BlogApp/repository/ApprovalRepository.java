@@ -1,8 +1,8 @@
-package repository;
+package com.anproject.BlogApp.repository;
 
-import entity.Approval;
-import entity.News;
-import entity.User;
+import com.anproject.BlogApp.entity.Approval;
+import com.anproject.BlogApp.entity.News;
+import com.anproject.BlogApp.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

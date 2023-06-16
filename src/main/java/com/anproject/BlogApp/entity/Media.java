@@ -1,7 +1,6 @@
-package entity;
+package com.anproject.BlogApp.entity;
 
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

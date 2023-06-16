@@ -1,11 +1,10 @@
-package repository;
+package com.anproject.BlogApp.repository;
 
-import entity.Role;
-import entity.User;
+import com.anproject.BlogApp.entity.Role;
+import com.anproject.BlogApp.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.jar.Attributes;
 
 public interface UserRepository extends JpaRepository<User,Long> {
 

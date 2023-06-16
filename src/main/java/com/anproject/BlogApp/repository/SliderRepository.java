@@ -1,7 +1,7 @@
-package repository;
+package com.anproject.BlogApp.repository;
 
-import entity.News;
-import entity.Slider;
+import com.anproject.BlogApp.entity.News;
+import com.anproject.BlogApp.entity.Slider;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
