@@ -3,8 +3,10 @@ package com.anproject.BlogApp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -21,7 +23,8 @@ public class Role {
     @Column(name = "role_name")
     private String roleName;
 
-    @OneToMany(mappedBy = "roleId")
+    @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<>();
+
 
 }
