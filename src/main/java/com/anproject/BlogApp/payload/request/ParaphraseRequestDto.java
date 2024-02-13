@@ -3,7 +3,10 @@ package com.anproject.BlogApp.payload.request;
 import com.anproject.BlogApp.entity.News;
 import com.anproject.BlogApp.entity.Paraphrase;
 import com.anproject.BlogApp.entity.User;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
@@ -17,12 +20,9 @@ public class ParaphraseRequestDto {
 
     public static Paraphrase mapRequestDtoToEntity(ParaphraseRequestDto requestDto){
         return Paraphrase.builder()
-                .contents((requestDto.getContents()))
+                .contents(requestDto.getContents())
                 .user(requestDto.getUser())
                 .news(requestDto.getNews())
                 .build();
-
-
     }
-
 }

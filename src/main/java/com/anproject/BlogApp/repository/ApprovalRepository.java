@@ -10,11 +10,4 @@ import java.util.List;
 
 @Repository
 public interface ApprovalRepository extends JpaRepository<Approval, Long> {
-
-    Approval getApprovalById(long id);
-
-    List<Approval> getApprovalByNews(News news);
-
-    List<Approval> getApprovalByUser(User user);
-
 }

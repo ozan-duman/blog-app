@@ -2,10 +2,6 @@ package com.anproject.BlogApp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.*;
 
@@ -13,8 +9,8 @@ import java.util.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
+@Entity
 @Table(name = "news")
 public class News {
     @Id
@@ -22,7 +18,7 @@ public class News {
     private Long id;
     @Column(name = "title")
     private String title;
-    @Column(name = "contents")
+    @Column(columnDefinition = "TEXT", name = "contents")
     private String contents;
     @Column(name = "photos")
     private String photos;
@@ -30,7 +26,6 @@ public class News {
     private Date createdDate;
     @Column(name = "status")
     private boolean status;
-
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -45,16 +40,13 @@ public class News {
             inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
     private List<Category> categories = new ArrayList<>();
 
-
     @OneToMany(mappedBy = "news")
     private List<Approval> approvals = new ArrayList<>();
 
     @Transient
     public String getPhotosImagePath() {
         if (photos == null || id == null) return null;
-
-        return "/image/" + id + "/" + photos;
+        return "/news-photos/" + id + "/" + photos;
     }
-
 
 }

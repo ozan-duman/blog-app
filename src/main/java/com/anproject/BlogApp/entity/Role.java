@@ -1,12 +1,9 @@
 package com.anproject.BlogApp.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -15,16 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "roles")
+@Table(name="roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "role_name")
+    @Column(name="role_name")
     private String roleName;
 
     @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<>();
-
-
 }

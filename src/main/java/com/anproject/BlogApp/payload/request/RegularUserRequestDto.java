@@ -1,13 +1,14 @@
 package com.anproject.BlogApp.payload.request;
 
 import com.anproject.BlogApp.entity.User;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@Data
 @Builder
 public class RegularUserRequestDto {
     private String firstName;
@@ -16,16 +17,13 @@ public class RegularUserRequestDto {
     private String email;
     private String password;
 
-    public static User mapRequestDtoToEntity(RegularUserRequestDto regularUserRequestDto){
-
+    public static User mapRequestDtoToEntity(RegularUserRequestDto requestDto){
         return User.builder()
-                .firstName(regularUserRequestDto.firstName)
-                .lastName(regularUserRequestDto.lastName)
-                .nickname(regularUserRequestDto.nickname)
-                .email(regularUserRequestDto.email)
-                .password(regularUserRequestDto.password)
+                .firstName(requestDto.firstName)
+                .lastName(requestDto.lastName)
+                .nickname(requestDto.nickname)
+                .email(requestDto.email)
+                .password(requestDto.password)
                 .build();
-
     }
-
 }

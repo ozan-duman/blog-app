@@ -10,8 +10,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
+@Entity
 @Table(name = "categories")
 public class Category {
     @Id
@@ -19,11 +19,8 @@ public class Category {
     private Long id;
     @Column(name = "category_name")
     private String categoryName;
-    @Column(name = "description")
-    private String description;
 
     @ManyToMany(mappedBy = "categories")
     private List<News> news = new ArrayList<>();
-
 
 }

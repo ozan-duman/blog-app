@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public class CustomUserDetail implements UserDetails {
 
@@ -22,7 +21,7 @@ public class CustomUserDetail implements UserDetails {
         Role role = user.getRole();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+            authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
 
         return authorities;
     }

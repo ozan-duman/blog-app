@@ -17,18 +17,16 @@ import java.util.Date;
 public class ParaphraseResponseDto {
     private Long id;
     private String contents;
-    private Date createdDate;
 
-    private User user;
     private News news;
+    private User user;
 
-    public static ParaphraseResponseDto mapEntityToResponsetDto(Paraphrase paraphrase){
+    public static ParaphraseResponseDto mapEntityToReponseDto(Paraphrase paraphrase){
         return ParaphraseResponseDto.builder()
                 .id(paraphrase.getId())
                 .contents(paraphrase.getContents())
-                .createdDate(paraphrase.getCreatedDate())
-                .user(paraphrase.getUser())
                 .news(paraphrase.getNews())
+                .user(paraphrase.getUser())
                 .build();
     }
 }

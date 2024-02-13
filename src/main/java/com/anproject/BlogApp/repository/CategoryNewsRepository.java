@@ -10,6 +10,4 @@ import java.util.List;
 
 @Repository
 public interface CategoryNewsRepository extends JpaRepository<CategoryNews, Long> {
-
-
 }

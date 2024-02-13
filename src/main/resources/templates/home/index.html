@@ -1,144 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="tr" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-
-
-    <link rel="stylesheet" href="../../static/css/style.css" th:href="@{/css/style.css}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
+    <title>Anasayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <div th:insert="~{fragments/navbar}"/>
-<header>
-
-
-
-
-
-
-</header>
-
-
-<section class="home" id="home">
-    <div class="home-text container">
-        <h2 class="home-title">An Project</h2>
-        <span class="home-subtitle">Anime,haber ve dahası</span>
-    </div>
-</section>
-
-<div class="post-filter container">
-    <span class="filter-item active-filter" data-filter='all'>All</span>
-    <span class="filter-item" data-filter='anime'>Anime</span>
-    <span class="filter-item" data-filter='manga'>Manga</span>
-    <span class="filter-item" data-filter='film'>Film</span>
-
-</div>
-
-<section class="post container">
-    <div class="post-box anime">
-        <h2 class="category">Anime</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM</p>
-        <div class="profile">
-            <span class="profile-name">Kullanıcı 1</span>
+    <header>
+        <div th:insert="~{fragments/navbar}"/>
+    </header>
+    <div style="margin: 50px">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">kategori</h5>
+                        <p class="card-text">başlık</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIG.MxQxUggA0RKmKdTjwAqw" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">kategori</h5>
+                        <p class="card-text">başlık</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="post-box film">
-
-        <h2 class="category">Film</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU adqweqsdafsdfsfdfds
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM</p>
-        <div class="profile">
-
-            <span class="profile-name">Kullanıcı 2</span>
-        </div>
-    </div>
-
-    <div class="post-box manga">
-
-        <h2 class="category">Manga</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM
-        <div class="profile">
-
-            <span class="profile-name">Kullanıcı 3</span>
-        </div>
-    </div>
-
-    <div class="post-box anime">
-
-        <h2 class="category">Anime</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM</p>
-        <div class="profile">
-
-            <span class="profile-name">User 1</span>
-        </div>
-    </div>
-
-    <div class="post-box film">
-
-        <h2 class="category">Film</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU adqweqsdafsdfsfdfds
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM</p>
-        <div class="profile">
-
-            <span class="profile-name">User 2</span>
-        </div>
-    </div>
-
-    <div class="post-box manga">
-        <h2 class="category">Manga</h2>
-        <a href="post-page.html" class="post-title">
-            DÜNYANIN EN İYİ FRONTU
-        </a>
-        <span class="post-date"> 03.07.2023</span>
-        <p class="post-description">HAKOYU YEDİM
-        <div class="profile">
-            <span class="profile-name">User 3</span>
-        </div>
-    </div>
-</section>
-
-<div class="footer container">
-    <p>&#169; HAKOYU FRONTTA YEDİM</p>
-    <div class="social">
-        <a href="#"> <i class="bx bxfacebppl"></i></a>
-        <a href="#"> <i class="bx bxfacebppl"></i></a>
-        <a href="#"> <i class="bx bxfacebppl"></i></a>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
 </body>
 </html>

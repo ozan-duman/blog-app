@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,14 +26,14 @@ public class SecurityConfig {
             "/login",
             "/login/register",
             "/login/registration-process",
-
-
+            "/js/**"
     };
-
 
     public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
         this.customUserDetailsService = customUserDetailsService;
     }
+
+
 
 
     @Bean
@@ -42,7 +43,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider() {
+    public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(customUserDetailsService);
         authenticationProvider.setPasswordEncoder(passwordEncoder());
@@ -52,9 +53,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(request ->
-                        request.requestMatchers(ENDPOINTS_WHITELIST).permitAll()
-                                .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
-                                .anyRequest().authenticated())
+                request.requestMatchers(ENDPOINTS_WHITELIST).permitAll()
+                        .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
+                        .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .usernameParameter("nickname")
@@ -63,8 +64,6 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/home/index", true));
         http.csrf(csrf -> csrf.disable());
         return http.build();
-
     }
-
 
 }

@@ -10,10 +10,4 @@ import java.util.List;
 
 @Repository
 public interface ParaphraseRepository extends JpaRepository<Paraphrase, Long> {
-
-    Paraphrase getParaphraseById(long id);
-    List<Paraphrase> getParaphraseByNews(News news);
-    List<Paraphrase> getParaphraseByUser(User user);
-
-
 }

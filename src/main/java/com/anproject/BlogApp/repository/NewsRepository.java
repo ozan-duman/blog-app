@@ -8,9 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface NewsRepository extends JpaRepository<News,Long> {
-
-    News getNewsById (long id);
-
-
+public interface NewsRepository extends JpaRepository<News, Long> {
 }

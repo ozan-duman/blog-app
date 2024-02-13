@@ -1,15 +1,13 @@
 package com.anproject.BlogApp.payload.response;
 
-
 import com.anproject.BlogApp.entity.User;
 import lombok.*;
 
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class UserResponseDto {
     private Long id;
     private String firstName;
@@ -17,7 +15,7 @@ public class UserResponseDto {
     private String nickname;
     private String email;
 
-    public static UserResponseDto mapEntityToResponseDto(User user) {
+    public static UserResponseDto mapEntityToResponseDto(User user){
         return UserResponseDto.builder()
                 .id(user.getId())
                 .firstName(user.getFirstName())
@@ -25,9 +23,6 @@ public class UserResponseDto {
                 .nickname(user.getNickname())
                 .email(user.getEmail())
                 .build();
-
-
     }
-
 
 }

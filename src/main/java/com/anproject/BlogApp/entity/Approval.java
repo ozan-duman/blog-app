@@ -18,7 +18,9 @@ public class Approval {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "approve_info")
     private boolean approveInfo;
+    @Column(name = "approve_date")
     private Date approveDate;
 
     @ManyToOne

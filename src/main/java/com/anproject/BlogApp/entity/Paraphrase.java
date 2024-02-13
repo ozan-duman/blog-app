@@ -3,14 +3,14 @@ package com.anproject.BlogApp.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.*;
+import java.util.Date;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
+@Entity
 @Table(name = "paraphrase")
 public class Paraphrase {
     @Id
@@ -21,7 +21,6 @@ public class Paraphrase {
     @Column(name = "created_date")
     private Date createdDate;
 
-
     @ManyToOne
     @JoinColumn(name = "news_id")
     private News news;
@@ -29,6 +28,4 @@ public class Paraphrase {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-
 }
