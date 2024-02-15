@@ -12,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -25,16 +24,12 @@ public class SecurityConfig {
             "/css/**",
             "/login",
             "/login/register",
-            "/login/registration-process",
-            "/js/**"
+            "/login/registration-process"
     };
 
     public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
         this.customUserDetailsService = customUserDetailsService;
     }
-
-
-
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
